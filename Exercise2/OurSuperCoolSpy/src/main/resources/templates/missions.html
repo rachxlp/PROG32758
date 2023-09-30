@@ -1,0 +1,27 @@
+<!--
+ - Name:  Rachel Prasad
+ - Student ID: 991702269
+ - Assignment:  Exercise 2 - OurSuperCoolSpyApplication
+ - Program: Computer Systems and Network Engineering (Co-op)
+ -->
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spy App | Missions</title>
+</head>
+<body>
+<h1>Missions</h1>
+<h2>Please add a mission and gadget</h2>
+<form th:action="@{/addMission}" method="post">
+    <label for="missionTitle">Mission Title: <input type="text" id="missionTitle" name="missionTitle"></label><br><br>
+    <label for="gadget">Gadget: <input type="text" id="gadget" name="gadget"></label><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<p>Go to <a th:href="@{/}">home</a></p>
+<p>Click to view <a th:href="@{/view_missions}">mission list</a></p>
+</body>
+</html>
+<!--end-->

@@ -1,3 +1,10 @@
+/*
+ * Name:  Rachel Prasad
+ * Student ID: 991702269
+ * Assignment:  Exercise 3 - School Management
+ * Program: Computer Systems and Network Engineering (Co-op)
+ */
+
 package ca.sheridancollege.School_Management;
 
 import org.springframework.boot.SpringApplication;

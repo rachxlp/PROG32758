@@ -1,0 +1,29 @@
+<!--
+ - Name:  Rachel Prasad
+ - Student ID: 991702269
+ - Assignment:  Exercise 3 - School Management
+ - Program: Computer Systems and Network Engineering (Co-op)
+ -->
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Management | Add a School</title>
+</head>
+<body>
+<h1>Use this page to add a school</h1>
+<br>
+<br>
+<form action="#" th:action="@{/addSchool}" method="post" th:object="${school}">
+    <label for="schoolName">Name: <input type="text" id="schoolName" name="schoolName"></label><br><br>
+    <label for="addressName">Address: <input type="text" id="addressName" name="addressName"></label><br><br>
+    <label for="numberOfStudents">Number of Students: <input type="number" th:field="*{numStudents}" id="numberOfStudents" name="numStudents"></label><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+<!--end-->

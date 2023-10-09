@@ -1,0 +1,39 @@
+<!--
+ - Name:  Rachel Prasad
+ - Student ID: 991702269
+ - Assignment:  Exercise 3 - School Management
+ - Program: Computer Systems and Network Engineering (Co-op)
+ -->
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Management | List of Schools</title>
+</head>
+<body>
+<div th:if="${#lists.isEmpty(schools)}">
+    <h1>No schools have been added.</h1>
+    <p><a th:href="@{/}">Back to Home</a></p>
+</div>
+<div th:unless="${#lists.isEmpty(schools)}">
+    <h1>Here are the schools:</h1>
+    <ul>
+        <li th:each="school : ${schools}">
+            <span th:text="${school.schoolName}"></span>
+            <span> in </span>
+            <span th:text="${school.addressName}"></span>
+            <span> has </span>
+            <span th:text="${school.numStudents}"></span>
+            <span> students</span>
+        </li>
+    </ul>
+
+    <p><a th:href="@{/}">Back to Home</a></p>
+</div>
+</body>
+</html>
+</body>
+</html>
+
+<!--end-->

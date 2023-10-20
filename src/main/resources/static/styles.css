@@ -1,0 +1,40 @@
+/*
+ * Name:  Rachel Prasad
+ * Student ID: 991702269
+ * Assignment:  Assignment 3
+ * Program: Computer Systems and Network Engineering (Co-op)
+ */
+
+table, th, td {
+    border-width: 1px;
+    border-color: black;
+    border-style: double;
+    text-align: center; /* Center text within table cells */
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+th, td {
+    padding: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center the content horizontally and vertically */
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin: 20px;
+}

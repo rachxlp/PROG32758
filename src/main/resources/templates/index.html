@@ -1,0 +1,80 @@
+<!--
+ - Name:  Rachel Prasad
+ - Student ID: 991702269
+ - Assignment:  Assignment 3
+ - Program: Computer Systems and Network Engineering (Co-op)
+ -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details | Rachel Prasad</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <h1>Enter the book details</h1>
+    <form action="#" th:action="@{/addBook}" method="post" th:object="${book}">
+        <label for="bookISBNName">Book ISBN Name:</label>
+        <input type="text" id="bookISBNName" th:field="*{bookISBNName}" placeholder="Enter isbn number"> <br>
+        <label for="bookName">Book Name:</label>
+        <input type="text" id="bookName" th:field="*{bookName}" placeholder="Enter the book name"> <br>
+        <label for="AuthorName">Author Name:</label>
+        <input type="text" id="AuthorName" th:field="*{authorName}" placeholder="Enter author name"> <br>
+        <label>Role:</label>
+        <select th:field="*{role}">
+            <option th:value="'user'" th:text="USER"></option>
+            <option th:value="'admin'" th:text="ADMIN"></option>
+        </select>
+        <br>
+        <span>
+            <input type="submit">
+            <input type="reset">
+        </span>
+    </form>
+<div th:if="${bookList.isEmpty()}">
+    <div class="if-empty">
+        <p>No records found. Add some...!</p>
+        <br>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Book ISBN Number</th>
+                <th>Book Name</th>
+                <th>Author Name</th>
+                <th>Role</th>
+                <th>Creation Date</th>
+                <th>Actions</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:unless="${bookList.isEmpty()}">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Book ISBN Number</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Role</th>
+            <th>Creation Date</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="book : ${bookList}">
+            <td th:text="${book.id}"></td>
+            <td th:text="${book.bookISBNName}"></td>
+            <td th:text="${book.bookName}"></td>
+            <td th:text="${book.authorName}"></td>
+            <td th:text="${book.role}"></td>
+            <td th:text="${book.creationDate}"></td>
+            <td>
+                <span th:if="${book.role == 'user'}">User role only!</span>
+                <span th:unless="${book.role == 'user'}">
+                    <a href="#" th:href="@{'/delete/' + ${book.id}}">delete</a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

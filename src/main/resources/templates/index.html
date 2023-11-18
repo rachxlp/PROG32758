@@ -1,0 +1,33 @@
+<!--
+ - Name:  Rachel Prasad
+ - Student ID: 991702269
+ - Assignment:  Exercise 5 - Messages
+ - Program: Computer Systems and Network Engineering (Co-op)
+ -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages | Rachel Prasad</title>
+</head>
+<body>
+
+<form action="#" method="post" th:action="@{/saveMessage}" th:object="${message}">
+    <textarea th:field="*{message}" rows="4" cols="50"></textarea>
+    <br>
+    <input type="submit" value="Save Message">
+</form>
+
+<h2>Messages</h2>
+<div th:unless="${session.messageList.isEmpty()}" ></div>
+<ul th:each="message : ${session.messageList}">
+    <li th:text="${message.message}"></li>
+</ul>
+
+<form action="#" method="get" th:action="@{/destroyMessageSession}">
+    <input type="submit" value="Destroy Session">
+</form>
+
+</body>
+</html>
